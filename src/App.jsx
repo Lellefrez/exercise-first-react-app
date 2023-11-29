@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Titolo from "./components/Titolo";
+import Paragrafo from "./components/Paragrafo";
+import "./App.css";
+import Immagine from "./components/Immagine";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Titolo />
+      <Paragrafo />
+      <div className="cards">
+        <Immagine
+          src={
+            "https://twinfinite.net/wp-content/uploads/2022/10/Tokyo-Revengers-Mikey-Staring-at-Camera-Screenshot.jpg?w=1200"
+          }
+          alt="Immagine di Mikey"
+          didascalia={"Mikey arrabbiato"}
+        />
+        <Immagine
+          src={
+            "https://i.pinimg.com/originals/3a/4c/64/3a4c64b726244d79e8009a30fdd75e3a.png"
+          }
+          alt="Immagine di Mikey"
+          didascalia={"Mikey felice"}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <label htmlFor="nameScelta">Quale Mikey preferisci?</label>
+      <input id="nameScelta" type="checkbox" />
+      <input id="nameScelta" type="checkbox" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
